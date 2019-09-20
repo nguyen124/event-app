@@ -11,3 +11,7 @@ em {
 .error ::-webkit-input-placeholder, ::-moz-placeholder, :-moz-placeholder, :ms-input-placeholder {
     color: #999;
 }
+
+.d-inline {
+    display: inline;
+}
