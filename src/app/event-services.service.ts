@@ -4,11 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EventService {
-
   constructor() { }
 
   getEvents() {
     return EVENTS;
+  }
+  
+  getEvent(idx: number): any {
+    return EVENTS[idx];
   }
 }
 
