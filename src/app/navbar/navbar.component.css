@@ -1,3 +1,7 @@
 .nav.navbar-nav {
     font-size: 18px;
 }
+
+li>a.active {
+    color: #F97924;
+}
