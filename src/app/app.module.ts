@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './create-session/create-session.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
+    CreateSessionComponent,
   ],
   imports: [
     BrowserModule,
