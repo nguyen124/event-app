@@ -1,1 +1,8 @@
-<app-event-thumbnail></app-event-thumbnail>
+<div>
+    <h1>Upcoming Events</h1>
+    <div class="row">
+        <div *ngFor="let event of events" class="col-md-5">
+            <app-event-thumbnail [event]="event"></app-event-thumbnail>
+        </div>
+    </div>
+</div>
