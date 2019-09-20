@@ -11,6 +11,7 @@ import { appRoutes } from './routes';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivatorService } from './event-route-activator.service';
+import { EventRouteDeactivatorService } from './event-route-deactivator.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EventRouteActivatorService } from './event-route-activator.service';
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventRouteActivatorService],
+  providers: [EventRouteActivatorService, EventRouteDeactivatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
