@@ -11,7 +11,10 @@ export class EventRouteDeactivatorService implements CanDeactivate<CreateEventCo
   constructor(private eventSvc: EventService, private router: Router) { }
 
   canDeactivate(component: CreateEventComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot) {
-    return false;
+    if (component.isDirty) {
+      return window.confirm('You have not saved this event, do you really want to cancel?');
+    }
+    return true;
   }
 
 }
