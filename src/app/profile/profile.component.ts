@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     if (this.authSvc.currentUser) {
-      this.firstName = new FormControl(this.authSvc.currentUser.firstName, Validators.required);
+      this.firstName = new FormControl(this.authSvc.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
       this.lastName = new FormControl(this.authSvc.currentUser.lastName, Validators.required);
     }
 
@@ -39,10 +39,16 @@ export class ProfileComponent implements OnInit {
   }
 
   validateFirstName() {
-    return this.firstName.valid || this.firstName.untouched;
+    if (!!this.firstName) {
+      return this.firstName.valid || this.firstName.untouched;
+    }
+    return !!this.firstName;
   }
 
   validateLastName() {
-    return this.lastName.valid || this.lastName.untouched;
+    if (!!this.lastName) {
+      return this.lastName.valid || this.lastName.untouched;
+    }
+    return !!this.lastName;
   }
 }
