@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './create-session/create-session.component';
-
+import { restrictedWords } from './shared/restricted-words.validator'; // need to include this even not use
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +30,10 @@ import { CreateSessionComponent } from './create-session/create-session.componen
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventRouteActivatorService, EventRouteDeactivatorService],
+  providers: [EventRouteActivatorService, EventRouteDeactivatorService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
