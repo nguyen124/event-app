@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { SessionListComponent } from './session-list/session-list.component'; // need to include this even not use
 import { CustomValidateService } from './shared/restricted-words.validator';
+import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { CustomValidateService } from './shared/restricted-words.validator';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
+    CollapsibleWellComponent,
   ],
   imports: [
     BrowserModule,
