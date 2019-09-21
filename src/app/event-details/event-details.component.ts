@@ -10,6 +10,7 @@ import { IEvent } from '../shared/event.model';
 })
 export class EventDetailsComponent implements OnInit {
   event: IEvent;
+
   constructor(private eventSvc: EventService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {

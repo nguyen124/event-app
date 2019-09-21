@@ -14,7 +14,8 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './create-session/create-session.component';
-import { restrictedWords } from './shared/restricted-words.validator'; // need to include this even not use
+import { restrictedWords } from './shared/restricted-words.validator';
+import { SessionListComponent } from './session-list/session-list.component'; // need to include this even not use
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { restrictedWords } from './shared/restricted-words.validator'; // need t
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,
