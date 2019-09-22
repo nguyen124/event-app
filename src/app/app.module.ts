@@ -18,6 +18,9 @@ import { SessionListComponent } from './session-list/session-list.component'; //
 import { CustomValidateService } from './shared/restricted-words.validator';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './shared/duration.pipe';
+import { TOASTR_TOKEN, Toastr } from './shared/toastr.service';
+
+declare let toastr: Toastr;
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,7 @@ import { DurationPipe } from './shared/duration.pipe';
 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventRouteActivatorService, EventRouteDeactivatorService, CustomValidateService],
+  providers: [EventRouteActivatorService, EventRouteDeactivatorService, CustomValidateService, { provide: TOASTR_TOKEN, useValue: toastr }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
