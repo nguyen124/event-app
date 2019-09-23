@@ -18,9 +18,11 @@ import { SessionListComponent } from './session-list/session-list.component'; //
 import { CustomValidateService } from './shared/restricted-words.validator';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './shared/duration.pipe';
-import { TOASTR_TOKEN, Toastr } from './shared/toastr.service';
+import { TOASTR_TOKEN, Toastr, JQ_TOKEN } from './shared/shared-include';
 
-declare let toastr: Toastr;
+let toastr: Toastr = window['toastr'];
+let jQuery: Toastr = window['$'];
+
 @NgModule({
   declarations: [
     AppComponent,
