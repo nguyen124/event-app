@@ -19,6 +19,8 @@ import { CustomValidateService } from './shared/restricted-words.validator';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './shared/duration.pipe';
 import { TOASTR_TOKEN, Toastr, JQ_TOKEN } from './shared/shared-include';
+import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
+import { TriggerModalDirective } from './common/trigger-modal.directive';
 
 let toastr: Toastr = window['toastr'];
 let jQuery: Toastr = window['$'];
@@ -35,7 +37,9 @@ let jQuery: Toastr = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    TriggerModalDirective
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,12 @@ let jQuery: Toastr = window['$'];
 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventRouteActivatorService, EventRouteDeactivatorService, CustomValidateService, { provide: TOASTR_TOKEN, useValue: toastr }],
+  providers: [
+    EventRouteActivatorService,
+    EventRouteDeactivatorService,
+    CustomValidateService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
