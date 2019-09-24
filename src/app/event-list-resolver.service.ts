@@ -12,6 +12,6 @@ export class EventListResolverService implements Resolve<any>{
   }
 
   resolve() {
-    return this.eventSvc.getEvents().pipe(map(events => events));
+    return this.eventSvc.getEvents();
   }
 }

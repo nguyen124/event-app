@@ -21,6 +21,7 @@ import { DurationPipe } from './shared/duration.pipe';
 import { TOASTR_TOKEN, Toastr, JQ_TOKEN } from './shared/shared-include';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { TriggerModalDirective } from './common/trigger-modal.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 let toastr: Toastr = window['toastr'];
 let jQuery: Toastr = window['$'];
@@ -45,7 +46,7 @@ let jQuery: Toastr = window['$'];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
