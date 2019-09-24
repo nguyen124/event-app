@@ -23,8 +23,9 @@ export class EventService {
     }
   }
 
-  getEvent(idx: number): IEvent {
-    return EVENTS[idx];
+  getEvent(id: number): Observable<IEvent> {
+    return this.http.get<IEvent>("/api/events/" + id)
+      .pipe(catchError(this.handleError<IEvent>('getEvents')));
   }
 
   saveEvent(event) {
