@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { IUser } from './shared/user.model';
+import { IAccount } from './shared/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  currentUser: IUser;
+  currentUser: IAccount;
   constructor() { }
 
   loginUser(userName: string, password: string) {
     this.currentUser = {
       id: 1,
-      userName: 'hai',
+      userName: userName,
       firstName: 'Hai',
       lastName: 'Nguyen'
     }

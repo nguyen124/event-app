@@ -35,8 +35,6 @@ export class SessionListComponent implements OnInit, OnChanges {
       }
       return -1;
     });
-
-
   }
 
   filterSessions() {

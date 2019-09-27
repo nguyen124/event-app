@@ -15,6 +15,5 @@ export class TriggerModalDirective implements OnInit {
     this.el.addEventListener('click', e => {
       this.$(`#${this.modalId}`).modal({});
     })
-
   }
 }

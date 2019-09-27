@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { IUser } from '../shared/user.model';
 import { ISession } from '../shared/event.model';
 import { EventService } from '../event-services.service';
 
