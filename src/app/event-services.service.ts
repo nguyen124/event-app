@@ -39,8 +39,8 @@ export class EventService {
       .pipe(catchError(this.handleError<IEvent>('addSessions')));
   }
 
-  searchSessions(term: any): Observable<ISession[]> {
-    return this.http.get<ISession[]>("/api/sessions/search?search=" + term)
+  searchSessions(name: any): Observable<ISession[]> {
+    return this.http.get<ISession[]>("/api/events/sessions/search?name=" + name)
       .pipe(catchError(this.handleError<ISession[]>('searchSessions')));
   }
 
