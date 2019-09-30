@@ -11,7 +11,7 @@ export interface IEvent {
         country: string
     },
     onlineUrl?: string,
-    sessions: ISession[]
+    eventSessions: ISession[]
 }
 
 export interface ISession {
@@ -20,6 +20,6 @@ export interface ISession {
     presenter: string,
     duration: number,
     level: string,
-    abstract: string,
+    abstraction: string,
     voters: string[]
 }

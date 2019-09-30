@@ -33,6 +33,12 @@ export class EventService {
       .pipe(catchError(this.handleError<IEvent>('saveEvents')));
   }
 
+  addSession(eventId, session) {
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http.post<IEvent>("/api/events/" + eventId + "/sessions", session, options)
+      .pipe(catchError(this.handleError<IEvent>('addSessions')));
+  }
+
   searchSessions(term: any): Observable<ISession[]> {
     return this.http.get<ISession[]>("/api/sessions/search?search=" + term)
       .pipe(catchError(this.handleError<ISession[]>('searchSessions')));

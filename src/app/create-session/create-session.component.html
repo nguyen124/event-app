@@ -36,18 +36,18 @@
                 <option value="Advanced">Advanced</option>
             </select>
         </div>
-        <div class="form-group" [ngClass]="{'error':abstract.invalid && abstract.dirty}">
-            <label for="abstract">Abstract:</label>
-            <div class="d-inline" *ngIf="abstract.invalid && abstract.dirty">
-                <em *ngIf="abstract?.errors.required">Required</em>
-                <em *ngIf="abstract?.errors.maxlength">Abstract can't be more than 400
+        <div class="form-group" [ngClass]="{'error':abstraction.invalid && abstraction.dirty}">
+            <label for="abstraction">abstraction:</label>
+            <div class="d-inline" *ngIf="abstraction.invalid && abstraction.dirty">
+                <em *ngIf="abstraction?.errors.required">Required</em>
+                <em *ngIf="abstraction?.errors.maxlength">Abstraction can't be more than 400
                     characters</em>
-                <em *ngIf="abstract?.errors.restrictedWords">Restricted words found:
-                    {{abstract.errors.restrictedWords}}</em>
+                <em *ngIf="abstraction?.errors.restrictedWords">Restricted words found:
+                    {{abstraction.errors.restrictedWords}}</em>
             </div>
 
-            <textarea formControlName="abstract" id="abstract" rows=3 class="form-control"
-                placeholder="abstract..."></textarea>
+            <textarea formControlName="abstraction" id="abstraction" rows=3 class="form-control"
+                placeholder="abstraction..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default">Cancel</button>
