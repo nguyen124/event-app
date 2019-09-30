@@ -11,7 +11,8 @@ export class SessionListComponent implements OnInit, OnChanges {
   @Input() filterBy: string;
   @Input() sortBy: string;
   visibleSessions: ISession[];
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
