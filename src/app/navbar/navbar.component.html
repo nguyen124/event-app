@@ -11,14 +11,16 @@
                         Events</a>
                 </li>
                 <li><a [routerLink]="['events/new']" routerLinkActive="active">Create Event</a></li>
-                
+
             </ul>
             <div class="navbar-header navbar-right">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a *ngIf="!authSvc.isAuthenticated()" [routerLink]="['user/login']">Login</a>
-                        <a *ngIf="authSvc.isAuthenticated()" [routerLink]="['user/profile']">Welcome
-                            {{authSvc.currentUser.firstName}}</a>
+                        <a *ngIf="!_authSvc.isLoggedIn()" class="btn" (click)="login()">Login</a>
+                        <a *ngIf="_authSvc.isLoggedIn()" class="btn" (click)="logout()">Logout</a>
+                        <a *ngIf="_authSvc.isLoggedIn()" [routerLink]="['user/profile']">Welcome
+                            {{_authSvc._user.profile.given_name}}
+                        </a>
                     </li>
                 </ul>
             </div>

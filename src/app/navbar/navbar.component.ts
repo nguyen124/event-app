@@ -11,7 +11,8 @@ import { EventService } from '../event-services.service';
 export class NavbarComponent implements OnInit {
   searchTerm: string = '';
   foundSessions: ISession[];
-  constructor(public authSvc: AuthService, private eventSvc: EventService) { }
+  
+  constructor(public _authSvc: AuthService, private eventSvc: EventService) { }
 
   ngOnInit() {
 
@@ -21,5 +22,13 @@ export class NavbarComponent implements OnInit {
     this.eventSvc.searchSessions(term).subscribe(sessions => {
       this.foundSessions = sessions;
     })
+  }
+
+  login() {
+    this._authSvc.loginUser();
+  }
+
+  logout() {
+    this._authSvc.logout();
   }
 }

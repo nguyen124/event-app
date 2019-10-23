@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(formValues) {
-    this.authSvc.loginUser(formValues.userName, formValues.password);
+  login() {
+    this.authSvc.loginUser();
     this.router.navigate(["/"]);
   }
 }
