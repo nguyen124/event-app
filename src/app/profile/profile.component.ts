@@ -17,9 +17,9 @@ export class ProfileComponent implements OnInit {
   constructor(private authSvc: AuthService, private router: Router, @Inject(TOASTR_TOKEN) private toastr: Toastr) { }
 
   ngOnInit() {
-    if (this.authSvc.currentUser) {
-      this.firstName = new FormControl(this.authSvc.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
-      this.lastName = new FormControl(this.authSvc.currentUser.lastName, Validators.required);
+    if (this.authSvc.isLoggedIn()) {
+      //this.firstName = new FormControl(this.authSvc.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
+      //this.lastName = new FormControl(this.authSvc.currentUser.lastName, Validators.required);
     }
 
     this.profileForm = new FormGroup({
@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
 
   saveProfile(formValues) {
     if (this.profileForm.valid) {
-      this.authSvc.updateCurrentUser(formValues.firstName, formValues.lastName);
+      //this.authSvc.updateCurrentUser(formValues.firstName, formValues.lastName);
       this.toastr.success('Profile Saved');
       this.router.navigate(['events']);
     }
